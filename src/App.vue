@@ -1,32 +1,38 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <transition :name="transitionName">
+      <router-view class="router-view"/>
+    </transition>
   </div>
 </template>
 
+<script>
+import {setHeight} from './utils';
+
+export default  {
+  name: 'App',
+  data() {
+    return {
+      transitionName: ''
+    }
+  },
+  watch: {
+    $route(to,from) {
+      if(to.meta.index > from.meta.index) {
+        this.transitionName = 'vux-pop-in';
+      } else {
+        this.transitionName = 'vux-pop-out';
+      }
+    }
+  }
+}
+</script>
+
 <style>
+@import url(./style/common.css);
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+  width: 100%;
+  height: 100%;
 }
 </style>

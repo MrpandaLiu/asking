@@ -1,29 +1,10 @@
-# asking
+# 软工项目Asking
 
-## Project setup
-```
-npm install
-```
+1. 本项目前端由vue+vant构成
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+2. 运行请在控制台运行npm run serve
 
-### Compiles and minifies for production
-```
-npm run build
-```
+3. 如有问题请联系我
 
-### Run your tests
-```
-npm run test
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+MrPanda  2020/4/1
