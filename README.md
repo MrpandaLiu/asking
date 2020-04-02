@@ -10,4 +10,6 @@
 
 5. 本项目的后端请移步于https://github.com/liukaimingzzx/Asking （后台功能由XDD大佬提供）
 
-MrPanda  2020/4/1
+- 当前版本1.01
+
+MrPanda最新于2020/4/1更新
