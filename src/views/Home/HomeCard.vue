@@ -2,7 +2,7 @@
   <div class="home-card" @click="goShowAsk('a',question.questionId)">
       <div><h3><img src="../../assets/hot.png" alt="">{{question.questionTitle}}</h3></div>
       <div class="author">
-          <img @click="checkUser(question.username)" :src="question.userAvater" alt="">
+          <img @click="checkUser(question.username)" :src="question.userAvater ? question.userAvater + '?t=' + (new Date().getTime()) : '' " alt="">
           <div style="color:#535353;">{{question.nickname}}</div>
       </div>
       <div class="question-intro">

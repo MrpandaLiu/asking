@@ -28,6 +28,7 @@ export default {
         }
     },
     mounted() {
+        // 展示首页问题
         showHomeQuestion().then(res => {
             console.log(res.data);
             let result = res.data.result;

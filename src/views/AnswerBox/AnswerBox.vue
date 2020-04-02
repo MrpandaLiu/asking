@@ -49,10 +49,11 @@
 </template>
 
 <script>
+// 引入方法
 import {UseComponents} from '../../utils';
 import {DetailBox} from '../../network/question';
 import {addBoxAns} from '../../network/answer';
-
+// 引入组件
 import WarnNavBar from '../../components/WarnNavBar';
 import Vue from 'vue';
 import { Overlay,Button,PasswordInput,NumberKeyboard,Toast,Field,Switch } from 'vant';
@@ -68,13 +69,14 @@ export default {
             showKeyboard: true,     // 展示数字键盘
             answer: '',     // 评论的回答
             anonymous: true,     // 是否匿名
-            boxId: '',
-            title: '',
-            content: ''
+            boxId: '',      // 问题箱id
+            title: '',      // 问题箱标题
+            content: '',    // 问题箱内容
         }
     },
     mounted() {
         let id = this.$route.params.boxid;
+        // 获取问题箱内容
         DetailBox({
             boxId: Number(id)
         }).then(res => {
@@ -102,9 +104,11 @@ export default {
                 Toast('密钥错误');
             }
         },
+        // 返回主页
         goHome() {
             this.$router.push('/home');
         },
+        // 提交问题箱评论
         handleComment() {
             addBoxAns({
                 username: this.$store.state.username,

@@ -4,7 +4,7 @@
         <h2 class="h2">修改头像</h2>
         <div class="edit-header">
             <div class="flex1 flex-center">
-                <img :src="avatar" alt="">
+                <img :src="avatar ? avatar + '?t=' + (new Date().getTime()) : '' " alt="">
             </div>
             <div class="flex1 flex-center">
                 <van-button round type="primary" @click="clickFile">上传新头像</van-button>
@@ -70,13 +70,16 @@ export default {
             //console.log(this.formData.get("file"));
             uploadAvatar(this.formData).then(res => {
                 console.log(res.data);
-                let code = res.data.errno,url = res.data.url;
+                let code = res.data.errno,url = res.data.url,msg = res.data.msg;
                 if(code === 0) {
                     this.avatar = url;
                     Notify({ type: 'success', message: '头像修改成功'});
                     this.$store.commit('AVATAR', {
                         avatar: this.avatar
                     });
+                    this.$router.push('/home');
+                } else if(code === 1) {
+                    Notify({ type: 'danger', message: msg });
                 } else {
                     Notify({ type: 'danger', message: '头像更新失败' });
                 }
@@ -101,6 +104,7 @@ export default {
                 });
                 if(code === 0) {
                     Notify({ type: 'success', message: msg });
+                    this.$router.push('/home');
                 } else {
                     Notify({ type: 'danger', message: msg });
                 }

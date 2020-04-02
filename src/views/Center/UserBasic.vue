@@ -1,7 +1,7 @@
 <template>
     <div class="center-info">
         <div class="avatar flex1 flex-center">
-            <img @click="goEdit" :src="$store.state.avatar" alt="avatar">
+            <img @click="goEdit" :src="$store.state.avatar  ? $store.state.avatar + '?t=' + (new Date().getTime()) : '' " alt="avatar">
         </div>
         <div class="username-intro flex-column">
             <h3>{{$store.state.nickname}}<span style="color: #1989fa;" v-if="$store.state.gender == 0"> ♂</span> <span style="color:pink;" v-else> ♀</span></h3>

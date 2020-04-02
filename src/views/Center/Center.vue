@@ -1,8 +1,11 @@
 <template>
   <div class="center">
         <nav-bar title="个人中心"></nav-bar>
+        <!-- 用户基本信息 -->
         <user-basic></user-basic>
+        <!-- 用户基本数据 -->
         <center-data></center-data>
+        <!-- 功能列表 -->
         <div class="func-list">
             <center-func url="/answerlist" imgsrc="checkQ.png" title="我的回答"></center-func>
             <center-func url="/myask" imgsrc="checkB.png" title="我的提问"></center-func>

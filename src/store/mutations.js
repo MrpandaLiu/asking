@@ -23,6 +23,7 @@ export default {
     },
     AVATAR(state, payload) {
         state.avatar = payload.avatar;
+        window.localStorage.removeItem('user');
         setStore('user',{
             username: state.username,
             avatar: payload.avatar
