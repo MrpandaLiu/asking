@@ -1,16 +1,20 @@
 # 软工项目Asking
 
-- 当前版本1.01
+- 当前版本1.02
 
-1. 本项目前端由vue（框架）+vant（UI组件库）编写
+1. 环境支持：Node
 
-2. 运行前请npm install安装所需依赖
+2. 框架：vue.js + vantUI
 
-3. 运行时请在控制台运行npm run serve
+3. 注意事项：
 
-4. 如有问题请联系我
+    - 安装项目所需依赖：命令行执行npm install
 
-5. 本项目的后端请移步于https://github.com/liukaimingzzx/Asking （后台功能由XDD大佬提供）
+    - 运行项目：命令行执行npm run serve
+
+4. 后端支持本项目的后端请移步于https://github.com/liukaimingzzx/Asking （后台功能由XDD大佬提供）
+
+5. 如有问题请联系我
 
 
-MrPanda最新于2020/4/1更新
+> MrPanda最新于2020/4/7更新
