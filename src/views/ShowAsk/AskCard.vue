@@ -70,6 +70,10 @@ export default {
     border-bottom: 1px solid #ddd;
 }
 
+.show-ask .ask-list .ask-card>div {
+    padding: 5px 5px 0 5px;
+}
+
 .show-ask .ask-list .ask-card:nth-last-of-type(1) {
     margin-bottom: 70px;
 }

@@ -21,6 +21,7 @@
 import {UseComponents} from '../../utils';
 import {detailQuestion} from '../../network/question';
 import { answerList,addAns } from "../../network/answer";
+import Event from '../../utils/event-bus';
 
 import NavBar from '../../components/NavBar';
 import ShowTitle from './ShowTitle';
@@ -85,6 +86,8 @@ export default {
                         this.$store.commit('ADDANS');
                         this.answerList = res.data.result;
                         this.loading = false;
+                        this.comment = '';
+                        Event.$emit('addComment',1);
                     }
                 })
             } else {

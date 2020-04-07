@@ -13,8 +13,8 @@
         </div>
         <h2 class="h2">修改信息</h2>
         <van-cell-group>
-            <van-field v-model="username" label="邮箱" disabled/>
-            <van-field v-model="nickname" label="用户名" placeholder="请输入用户名"/>
+            <van-field v-model="username" label="用户名" disabled/>
+            <van-field v-model="nickname" label="昵称" placeholder="请输入昵称"/>
             <van-field v-model="password" type="password" label="密码" />
             <van-field name="radio" label="性别">
                 <template #input>

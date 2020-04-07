@@ -110,18 +110,22 @@ export default {
         },
         // 提交问题箱评论
         handleComment() {
-            addBoxAns({
-                username: this.$store.state.username,
-                boxAcontent: this.answer,
-                boxId: this.boxId
-            }).then(res => {
-                console.log(res.data);
-                let code =res.data.errno,msg = res.data.msg;
-                Toast(msg);
-                if(code === 0) {
-                    this.$router.push('/home');
-                }
-            })
+            if(this.answer !== '') {
+                addBoxAns({
+                    username: this.$store.state.username,
+                    boxAcontent: this.answer,
+                    boxId: this.boxId
+                }).then(res => {
+                    console.log(res.data);
+                    let code =res.data.errno,msg = res.data.msg;
+                    Toast(msg);
+                    if(code === 0) {
+                        this.$router.push('/home');
+                    }
+                })
+            } else {
+                Toast('回答不能为空');
+            }
         },
         // 输入数字键盘
         onInput(key) {

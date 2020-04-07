@@ -25,7 +25,7 @@ export default {
     name: 'CenterData',
     data() {
         return {
-            title: ''
+            title: ''   // 称号
         }
     },
     mounted() {

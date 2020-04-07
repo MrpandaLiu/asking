@@ -4,19 +4,33 @@
         <div class="author"><strong>来自：</strong>{{Title.nickname}}</div>
         <div class="author"><strong>描述：</strong>{{Title.questionContent}}</div>
         <div class="question-info">
-            <span>{{Title.questionView}} 浏览 </span> · <span> {{Title.commentCount}} 评论</span>
+            <span>{{Title.questionView}} 浏览 </span> · <span> {{commentcount}} 评论</span>
         </div>
     </div>
 </template>
 
 <script>
+import Event from '../../utils/event-bus';
+
 import {Tag} from 'vant';
 import Vue from 'vue';
 Vue.use(Tag);
 
 export default {
     name: 'ShowTitle',
-    props: ['Title']
+    data() {
+        return {
+            commentcount: 0,    // 评论数
+        }
+    },
+    props: ['Title'],
+    mounted() {
+        this.commentcount = this.Title.commentCount;
+        Event.$on('addComment',(data) => {
+            this.commentcount += data;
+            console.log(data);
+        })
+    },
 }
 </script>
 

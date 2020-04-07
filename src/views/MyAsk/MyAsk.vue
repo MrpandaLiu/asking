@@ -145,7 +145,7 @@ export default {
         },
         copyInfo(title,id,pwd) {
             let _input = document.createElement('input');
-            let mydata = `我的问题是“${title}”,请打开网址：http://192.168.43.77:8080/answerbox/${id},输入密钥：${pwd}后即可回答`;
+            let mydata = `我的问题是“${title}”,请打开网址：http://192.168.31.196:8080/answerbox/${id},输入密钥：${pwd}后即可回答`;
             _input.value = mydata;
             document.body.appendChild(_input);
             _input.select();

@@ -10,8 +10,9 @@
             <center-func url="/answerlist" imgsrc="checkQ.png" title="我的回答"></center-func>
             <center-func url="/myask" imgsrc="checkB.png" title="我的提问"></center-func>
             <center-func url="/askquestion" imgsrc="buildQ.png" title="创建问题"></center-func>
-            <center-func url="/" imgsrc="help.png" title="帮助/提示"></center-func>
+            <center-func url="/user/center" imgsrc="help.png" title="帮助/提示"></center-func>
         </div>
+        <!-- 退出功能 -->
         <div class="center-func">
             <div class="center-func-left flex-center">
                 <img src="../../assets/quit.png" alt="">
@@ -36,6 +37,7 @@ import CenterFunc from './CenterFunc';
 export default {
     name: 'Center',
     methods: {
+        // 退出
         quit() {
             window.localStorage.removeItem('user');
             this.$router.push('/');

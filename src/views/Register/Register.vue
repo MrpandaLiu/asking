@@ -5,7 +5,7 @@
         <van-field
             v-model="username"
             name="username"
-            label="邮箱"
+            label="用户名"
             placeholder="请输入用户邮箱，作为您的唯一标识"
             :rules="[{ required: true, message: '请填写邮箱' }]"
         />

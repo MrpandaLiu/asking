@@ -5,7 +5,7 @@
       </div>
       <login-form :hidshow="hidshow"></login-form>
       <div class="nav" v-show="hidshow">
-          <router-link to="/user/register">注册</router-link> | <router-link to="home">游客</router-link>
+          还没账号？<router-link to="/user/register">点这里</router-link>
       </div>
   </div>
 </template>
