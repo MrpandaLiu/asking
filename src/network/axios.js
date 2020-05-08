@@ -2,19 +2,19 @@ import axios from 'axios'
 
 export function request(config) {
     const instance = axios.create({
-        baseURL: 'http://3w05221j99.wicp.vip:80',
+        baseURL: 'http://59.110.152.103:8087',
         timeout: 10000
     })
 
     instance.interceptors.request.use(config => {
         return config;
-    },err => {
+    }, err => {
         console.log(err);
     })
 
     instance.interceptors.response.use(res => {
         return res;
-    },err => {
+    }, err => {
         console.log(err);
     })
 
