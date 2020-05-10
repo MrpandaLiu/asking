@@ -100,6 +100,41 @@ const routes = [{
     },
     component: () => import('../views/CheckUser/CheckUser.vue')
   },
+  {
+    path: '/admin/login',
+    meta: {
+      title: '管理员登录',
+      index: 0
+    },
+    component: () => import('../views/Admin/AdminLogin.vue')
+  },
+  {
+    path: '/admin',
+    meta: {
+      title: '管理员系统',
+      index: 1
+    },
+    component: () => import('../views/Admin/Admin.vue'),
+    children: [{
+      path: '/admin/user',
+      meta: {
+        title: '用户一览'
+      },
+      component: () => import('../views/Admin/UserTable.vue')
+    }, {
+      path: '/admin/question',
+      meta: {
+        title: '提问一览',
+      },
+      component: () => import('../views/Admin/QuestionTable.vue')
+    }, {
+      path: '/admin/answer/:id',
+      meta: {
+        title: '回答一览',
+      },
+      component: () => import('../views/Admin/AnswerTable.vue')
+    }]
+  }
 ]
 
 const router = new VueRouter({
@@ -113,7 +148,7 @@ router.beforeEach((to, from, next) => {
   if (localStorage.getItem('user')) {
     next();
   } else {
-    if (to.path === '/' || to.path === '/user/register') {
+    if (to.path === '/' || to.path === '/user/register' || to.path === '/admin/login') {
       next()
     } else {
       if (to.path.indexOf('/answerbox') !== -1) {

@@ -12,6 +12,9 @@
       <strong>描述：</strong>
       {{Title.questionContent}}
     </div>
+    <div class="question-img">
+      <img :src="Title.img" alt />
+    </div>
     <div class="question-info">
       <span>{{Title.questionView}} 浏览</span> ·
       <span>{{commentcount}} 评论</span>
@@ -55,6 +58,15 @@ export default {
   color: #666666;
   padding: 5px 15px 5px 15px;
   line-height: 150%;
+}
+
+.show-ask .ask-title .question-img {
+  margin-left: 15px;
+}
+
+.show-ask .ask-title .question-img img {
+  width: 95%;
+  height: 100%;
 }
 
 .show-ask .ask-title .question-info {

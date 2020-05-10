@@ -1,10 +1,15 @@
-import { request } from "./axios";
+import {
+    request
+} from "./axios";
 
 // 创建问题
 export function addQuestion(data) {
     return request({
         url: '/question/add',
         method: 'post',
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        },
         data: data
     })
 }
@@ -41,7 +46,7 @@ export function myquestion(data) {
         url: '/question/myquestion',
         method: 'post',
         data: data
-    })    
+    })
 }
 
 // 问题搜索
@@ -68,7 +73,7 @@ export function boxList(data) {
         url: 'questionbox/list',
         method: 'post',
         data: data
-    })    
+    })
 }
 
 // 删除问题箱
@@ -77,7 +82,7 @@ export function deleteBox(data) {
         url: 'questionbox/delete',
         method: 'post',
         data: data
-    })     
+    })
 }
 
 // 查看问题箱详情
@@ -86,7 +91,7 @@ export function DetailBox(data) {
         url: 'questionbox/detail',
         method: 'post',
         data: data
-    })     
+    })
 }
 
 // 搜索问题箱
@@ -95,5 +100,5 @@ export function SearchBox(data) {
         url: 'questionbox/search',
         method: 'post',
         data: data
-    })     
+    })
 }

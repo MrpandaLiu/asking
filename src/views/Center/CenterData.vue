@@ -51,7 +51,7 @@ export default {
           queCount: user.queCount,
           ansCount: user.ansCount
         });
-        this.userInfo[0].val = getTitle(user.coin);
+        this.title = getTitle(user.coin);
       });
     }
   },

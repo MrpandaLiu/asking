@@ -15,6 +15,9 @@
       <div style="color:#535353;">{{question.nickname}}</div>
     </div>
     <div class="question-intro">{{question.questionContent}}</div>
+    <div class="question-img">
+      <img :src="question.img" alt />
+    </div>
     <div class="question-info">
       <span>{{question.questionView}} 浏览</span> ·
       <span>{{question.commentCount}} 评论</span>
@@ -73,6 +76,15 @@ export default {
   height: 30px;
   border-radius: 50%;
   margin-right: 10px;
+}
+
+/* .home-card .question-img {
+  height: 200px;
+} */
+
+.home-card .question-img img {
+  width: 95%;
+  height: 100%;
 }
 
 .home-card .question-intro {
