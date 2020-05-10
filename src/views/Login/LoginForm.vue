@@ -22,7 +22,7 @@
 <script>
 // 引入方法
 import { sendLoginMsg } from "../../network/user";
-import { setStore, UseComponents } from "../../utils";
+import { UseComponents } from "../../utils";
 // 引入组件
 import { Form, Button, Field, Notify } from "vant";
 import Vue from "vue";

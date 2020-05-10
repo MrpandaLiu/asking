@@ -101,6 +101,14 @@ const routes = [{
     component: () => import('../views/CheckUser/CheckUser.vue')
   },
   {
+    path: '/help',
+    meta: {
+      title: '帮助',
+      index: 4
+    },
+    component: () => import('../views/Help/Help.vue')
+  },
+  {
     path: '/admin/login',
     meta: {
       title: '管理员登录',

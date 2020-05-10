@@ -1,6 +1,7 @@
 <template>
   <div style="height:auto;">
     <table>
+      <!-- 表格头 -->
       <tr>
         <th>
           <div style="width:50px;">序号</div>
@@ -12,13 +13,15 @@
           <div>操作</div>
         </th>
       </tr>
+      <!-- 表格体 -->
       <tr v-for="(item,index) in tableData" :key="index">
         <td>
           <div style="width:50px;">{{index+1}}</div>
         </td>
         <td v-for="th in tableRule" :key="th.name">
           <div v-if="isPic(th.name)" style="color:#1989fa;" @click="showPic(item[th.key])">查看</div>
-          <div v-else @click="mouseOver($event,item[th.key])">{{item[th.key]}}</div>
+          <!-- 点击展示详情 -->
+          <div v-else @click="mouseClick($event,item[th.key])">{{item[th.key]}}</div>
         </td>
         <td style="display:flex;width:150px;">
           <div
@@ -30,6 +33,7 @@
         </td>
       </tr>
     </table>
+    <!-- 分页器 -->
     <div style="width:400px;position:fixed;bottom: 50px; left: 200px;">
       <van-pagination
         @change="goPage"
@@ -55,30 +59,34 @@ export default {
   props: ["type", "tableRule", "function"],
   data() {
     return {
-      tableData: [],
-      currentPage: 0,
-      total: 0,
-      isShow: false,
-      noticeMsg: ""
+      tableData: [], // 表格展示数据的数组
+      currentPage: 0, // 当前页
+      total: 0, // 数据总数
+      isShow: false, // 详情是否展示
+      noticeMsg: "" // 详情内容
     };
   },
   mounted() {
+    // 初始化数据
     this.function(this, this.currentPage, this.tableData);
   },
   methods: {
+    // 判断是否照片类型
     isPic(name) {
       return ["头像", "图片"].includes(name);
     },
+    // 判断是否问题表格
     isQuestion() {
       return this.type === 2;
     },
+    // 展示图片
     showPic(url) {
-      console.log(url);
       ImagePreview({
         images: [url],
         closeable: true
       });
     },
+    // 删除一条数据项
     deleteItem(item) {
       Dialog.confirm({
         title: "删除",
@@ -135,15 +143,18 @@ export default {
           // on cancel
         });
     },
-    mouseOver(e, val) {
+    // 点击展示详情
+    mouseClick(e, val) {
       this.$refs.msg.style["top"] = e.pageY + "px";
       this.$refs.msg.style["left"] = e.pageX + "px";
       this.isShow = true;
       this.noticeMsg = val;
     },
+    // 跳转到问题对应的回答列表页
     goAnswer(id) {
       this.$router.push("/admin/answer/" + id);
     },
+    // 翻页
     goPage() {
       this.isShow = false;
       this.function(this, this.currentPage, this.tableData);
