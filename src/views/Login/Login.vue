@@ -97,8 +97,6 @@ export default {
 .login .pic img {
   width: 100%;
   height: 100%;
-  max-width: 200px;
-  max-height: 200px;
 }
 
 .nav {

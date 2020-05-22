@@ -29,10 +29,6 @@ export default {
 </script>
 
 <style>
-.van-nav-bar {
-  margin-top: 15px;
-}
-
 .van-nav-bar__title {
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
