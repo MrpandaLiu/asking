@@ -7,10 +7,11 @@
     <center-data></center-data>
     <!-- 功能列表 -->
     <div class="func-list">
+      <center-func url="/home" imgsrc="home.png" title="我的主页"></center-func>
       <center-func url="/answerlist" imgsrc="checkQ.png" title="我的回答"></center-func>
       <center-func url="/myask" imgsrc="checkB.png" title="我的提问"></center-func>
       <center-func url="/askquestion" imgsrc="buildQ.png" title="创建问题"></center-func>
-      <center-func url="/user/center" imgsrc="help.png" title="帮助/提示"></center-func>
+      <center-func url="/help" imgsrc="help.png" title="帮助提示"></center-func>
     </div>
     <!-- 退出功能 -->
     <div class="center-func">

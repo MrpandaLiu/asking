@@ -15,9 +15,9 @@
 import { checkUser } from "../../network/user";
 
 import LoginForm from "./LoginForm";
-import { Notify } from "vant";
+import { Toast } from "vant";
 import Vue from "vue";
-Vue.use(Notify);
+Vue.use(Toast);
 
 export default {
   name: "Login",
@@ -46,7 +46,7 @@ export default {
         const user = res.data.result;
         console.log(res.data);
         if (code === 0) {
-          Notify({ type: "success", message: "登录成功" });
+          Toast("登录成功");
           this.$store.commit("USER_INFO", {
             username: user.username,
             nickname: user.nickname,
@@ -62,7 +62,7 @@ export default {
           });
           this.$router.push("/home");
         } else {
-          Notify({ type: "danger", message: msg });
+          Toast(msg);
         }
       });
     }

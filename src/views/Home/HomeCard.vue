@@ -78,13 +78,15 @@ export default {
   margin-right: 10px;
 }
 
-/* .home-card .question-img {
+.home-card .question-img {
   height: 200px;
-} */
+  width: 95%;
+  overflow: hidden;
+}
 
 .home-card .question-img img {
   width: 95%;
-  height: 100%;
+  height: auto;
 }
 
 .home-card .question-intro {

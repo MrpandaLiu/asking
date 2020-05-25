@@ -60,6 +60,7 @@ export default {
   },
   methods: {
     onSearch(val) {
+      this.$emit("hideMore");
       if (this.select === "1") {
         console.log(val);
         SearchQuestion({
@@ -103,6 +104,8 @@ export default {
   height: 3.8rem;
   display: flex;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-top: 25px;
+  background: #ffffff;
 }
 
 .home .home-header .header-center {

@@ -19,6 +19,7 @@
     "@vue/cli-plugin-babel": "^4.2.0",
     "@vue/cli-service": "^4.2.0",
     "babel-plugin-import": "^1.13.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "vue-template-compiler": "^2.6.11"
   }
 }

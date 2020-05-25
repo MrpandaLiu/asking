@@ -8,6 +8,7 @@ const routes = [{
     path: '/',
     meta: {
       title: '登录',
+      isKeepAlive: true,
       index: 0
     },
     component: () => import('../views/Login/Login.vue')
@@ -24,6 +25,7 @@ const routes = [{
     path: '/home',
     meta: {
       title: '主页',
+      isKeepAlive: true,
       index: 1
     },
     component: () => import('../views/Home/Home.vue')
@@ -72,6 +74,7 @@ const routes = [{
     path: '/myask',
     meta: {
       title: '我的提问',
+      isKeepAlive: true,
       index: 3
     },
     component: () => import('../views/MyAsk/MyAsk.vue')

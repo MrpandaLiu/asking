@@ -1,10 +1,10 @@
 <template>
   <div class="home flex-column">
-    <home-header></home-header>
+    <home-header @hideMore="hide"></home-header>
     <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
       <van-loading v-if="loading" size="24px">加载中...</van-loading>
       <home-card v-for="(item,index) in this.$store.state.HomeList" :key="index" :question="item"></home-card>
-      <p class="more" @click="getMore">点击加载更多...</p>
+      <p class="more" v-if="more" @click="getMore">点击加载更多...</p>
     </van-pull-refresh>
   </div>
 </template>
@@ -25,7 +25,8 @@ export default {
     return {
       count: 0,
       isLoading: false,
-      loading: true
+      loading: true,
+      more: true
     };
   },
   mounted() {
@@ -49,6 +50,7 @@ export default {
         });
         Toast("刷新成功");
         this.isLoading = false;
+        this.more = true;
       });
     },
     getMore() {
@@ -62,6 +64,9 @@ export default {
           HomeList: arr
         });
       });
+    },
+    hide() {
+      this.more = false;
     }
   },
   components: {

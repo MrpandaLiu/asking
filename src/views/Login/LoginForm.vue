@@ -24,9 +24,9 @@
 import { sendLoginMsg } from "../../network/user";
 import { UseComponents } from "../../utils";
 // 引入组件
-import { Form, Button, Field, Notify } from "vant";
+import { Form, Button, Field, Toast } from "vant";
 import Vue from "vue";
-UseComponents(Vue, Form, Button, Field, Notify);
+UseComponents(Vue, Form, Button, Field, Toast);
 
 export default {
   name: "LoginForm",
@@ -49,7 +49,7 @@ export default {
         const msg = res.data.msg;
         console.log(res.data);
         if (code === 0) {
-          Notify({ type: "success", message: "登录成功" });
+          Toast("登录成功");
           this.$store.commit("USER_INFO", {
             username: user.username,
             nickname: user.nickname,
@@ -70,7 +70,7 @@ export default {
             this.$router.push("/home");
           }
         } else {
-          Notify({ type: "danger", message: msg });
+          Toast(msg);
         }
       });
     }

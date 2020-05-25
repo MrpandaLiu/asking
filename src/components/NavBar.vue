@@ -1,5 +1,7 @@
 <template>
-  <van-nav-bar :title="title" left-text="返回" left-arrow @click-left="onClickLeft" />
+  <div class="black">
+    <van-nav-bar :title="title" left-text="返回" left-arrow @click-left="onClickLeft" />
+  </div>
 </template>
 
 <script>
@@ -21,5 +23,11 @@ export default {
 .van-nav-bar__title {
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
+}
+
+.black {
+  width: 100%;
+  padding-top: 25px;
+  background: #ffffff;
 }
 </style>
