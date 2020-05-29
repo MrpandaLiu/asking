@@ -91,7 +91,8 @@ export default {
           url = res.data.url,
           msg = res.data.msg;
         if (code === 0) {
-          this.avatar = url;
+          this.avatar = url + "?t=" + new Date().getTime();
+          console.log(this.avatar);
           Notify({ type: "success", message: "头像修改成功" });
           this.$store.commit("AVATAR", {
             avatar: this.avatar

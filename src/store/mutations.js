@@ -1,4 +1,6 @@
-import { setStore } from '../utils'
+import {
+    setStore
+} from '../utils'
 
 export default {
     USER_INFO(state, payload) {
@@ -8,7 +10,7 @@ export default {
         state.profile = payload.profile;
         state.gender = payload.gender;
         state.avatar = payload.avatar;
-        setStore('user',{
+        setStore('user', {
             username: payload.username,
             avatar: payload.avatar
         });
@@ -24,13 +26,13 @@ export default {
     AVATAR(state, payload) {
         state.avatar = payload.avatar;
         window.localStorage.removeItem('user');
-        setStore('user',{
+        setStore('user', {
             username: state.username,
             avatar: payload.avatar
         });
     },
     ADDCOIN(state) {
-        state.coin+=2;
+        state.coin += 2;
     },
     CUTCOIN(state) {
         state.coin--;

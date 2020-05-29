@@ -11,7 +11,10 @@
       >
         <div class="first">
           <div class="pic flex1 flex-center">
-            <img :src="item.userAvater" alt />
+            <img
+              :src="item.userAvater ? item.userAvater + '?t=' + (new Date().getTime()) : '' "
+              alt
+            />
           </div>
           <div class="name-time flex-column">
             <div class="name">{{item.nickname}}</div>

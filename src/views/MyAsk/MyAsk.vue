@@ -85,7 +85,7 @@ export default {
       loading: true
     };
   },
-  mounted() {
+  activated() {
     myquestion({
       username: this.$store.state.username
     })
