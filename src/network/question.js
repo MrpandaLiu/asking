@@ -15,10 +15,11 @@ export function addQuestion(data) {
 }
 
 // 首页展示问题
-export function showHomeQuestion() {
+export function showHomeQuestion(data) {
     return request({
         url: '/question/list',
-        method: 'get'
+        method: 'post',
+        data: data
     })
 }
 

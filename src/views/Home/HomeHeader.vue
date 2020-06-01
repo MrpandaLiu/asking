@@ -60,7 +60,9 @@ export default {
   },
   methods: {
     onSearch(val) {
-      this.$emit("hideMore");
+      if (val) {
+        this.$emit("hideMore");
+      }
       if (this.select === "1") {
         console.log(val);
         SearchQuestion({
@@ -82,8 +84,8 @@ export default {
         }).then(res => {
           console.log(res.data);
           let code = res.data.errno;
-          let boxid = res.data.result.boxId;
-          if (boxid) {
+          if (code === 0) {
+            let boxid = res.data.result.boxId;
             this.$router.push(`/answerbox/${boxid}`);
           } else {
             Toast("没有符合的问题箱");

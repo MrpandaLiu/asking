@@ -43,6 +43,7 @@ export default {
   mounted() {
     this.questionId = Number(this.$route.params.askid);
     detailQuestion({
+      username: this.$store.state.username,
       questionId: this.questionId
     })
       .then(res => {

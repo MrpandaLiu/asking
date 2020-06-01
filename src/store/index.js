@@ -18,10 +18,8 @@ const state = {
   avatar: getStore('user', 'avatar') || null, // 头像
   queCount: null,
   ansCount: null,
-
   // 问题信息
   HomeList: [], // 首页问题数组
-
   // 管理员信息
   pageNum: 10, // 每页获取条数
 }
